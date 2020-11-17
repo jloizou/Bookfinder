@@ -1,0 +1,23 @@
+<section class="search"> 
+    <input class="search_input" 
+    type="text"
+    placeholder="search by author..."
+    [(ngModel)]="searchTerm"
+    />
+    <button 
+    class="btn-search"
+    (click)="getBooks()"
+    >
+    Search
+</button>
+</section>
+<section class="booksDisplay">
+    <div class="bookCard" *ngFor="let book of books">
+        <h3>{{book.volumeInfo.title}}</h3>
+        <p *ngFor="let author of book.volumeInfo.authors">{{author}}</p>
+        <img src={{book.volumeInfo.imageLinks.smallThumbnail}} class="cardImg"/>        
+        <p *ngIf="book.saleInfo.isEbook; else unavailable"><a href={{book.volumeInfo.previewLink}}>Available online!</a></p>
+        <ng-template #unavailable>Not available online</ng-template>
+
+    </div>
+</section>

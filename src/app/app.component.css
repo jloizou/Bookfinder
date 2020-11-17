@@ -1,0 +1,16 @@
+h1 { 
+    align-self: center;
+    size: 4rem;
+    margin: 0;
+}
+.appBook{ 
+    align-self: center;
+    height: 50%;
+    width: 50%;
+    padding: 0;
+    margin: 0;
+}
+.app{ 
+    display: flex;
+    flex-direction: column;
+}
