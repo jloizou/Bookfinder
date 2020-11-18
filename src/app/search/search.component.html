@@ -10,15 +10,26 @@
     >
     Search
 </button>
+<button (click)="handleFavButtonClick()">Favourites</button>
 </section>
 <section class="booksDisplay">
-    <div class="bookCard" *ngFor="let book of books">
-        <button (click)="handleSave()"></button>
+    <ng-container *ngIf="isFavOpen; else bookDisplay">
+        <div class="bookCard" *ngFor="let book of favBooks">
+            <h3>{{book.volumeInfo.title}}</h3>
+            <p *ngFor="let author of book.volumeInfo.authors">{{author}}</p>
+            <img src={{book.volumeInfo.imageLinks.smallThumbnail}} class="cardImg"/>        
+            <p *ngIf="book.saleInfo.isEbook; else unavailable"><a href={{book.volumeInfo.previewLink}}>Available online!</a></p>
+            <ng-template #unavailable>Not available online</ng-template>
+        </div>
+    </ng-container>
+    <ng-template #bookDisplay  >
+        <div class="bookCard" *ngFor="let book of books">
+        <button (click)="handleSave(book)" class="favBtn">Fav</button>
         <h3>{{book.volumeInfo.title}}</h3>
         <p *ngFor="let author of book.volumeInfo.authors">{{author}}</p>
         <img src={{book.volumeInfo.imageLinks.smallThumbnail}} class="cardImg"/>        
         <p *ngIf="book.saleInfo.isEbook; else unavailable"><a href={{book.volumeInfo.previewLink}}>Available online!</a></p>
         <ng-template #unavailable>Not available online</ng-template>
-
-    </div>
+        </div>
+    </ng-template>
 </section>

@@ -1,16 +1,41 @@
 h1 { 
     align-self: center;
-    size: 4rem;
-    margin: 0;
+    font-size: 3rem;
+    margin-bottom: 10%;
 }
-.appBook{ 
+/* .appBook{ 
     align-self: center;
     height: 50%;
     width: 50%;
     padding: 0;
     margin: 0;
-}
+} */
 .app{ 
     display: flex;
+    align-items: center;
     flex-direction: column;
+}
+.topCont{ 
+    width: 90%;
+    display: relative;
+    background-color: #51bfa6;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+.imageCont{ 
+    padding: 0;
+    height: 100%;
+    width: 50%;
+}
+img{ 
+    height: 300px;
+    padding: 0;
+}
+.titleText{ 
+    color: #fbe0be;
+    height: max-content;
 }
