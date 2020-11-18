@@ -12,9 +12,15 @@ export class SearchComponent implements OnInit {
   searchTerm: string;
   books: object;
 
+  handleSave() { 
+    
+  }
+
  
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, 
+              private firestore: AngularFirestore
+              ) { }
 
   ngOnInit(): void {
   }

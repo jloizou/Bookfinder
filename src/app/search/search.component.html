@@ -13,6 +13,7 @@
 </section>
 <section class="booksDisplay">
     <div class="bookCard" *ngFor="let book of books">
+        <button (click)="handleSave()"></button>
         <h3>{{book.volumeInfo.title}}</h3>
         <p *ngFor="let author of book.volumeInfo.authors">{{author}}</p>
         <img src={{book.volumeInfo.imageLinks.smallThumbnail}} class="cardImg"/>        
